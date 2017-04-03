@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DotNetMeetupVS2017ShowCase.Logic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,23 +9,26 @@ namespace DotNetMeetupVS2017ShowCase.Controllers
 {
     public class HomeController : Controller
     {
+        private MessageProvider _messageProvider;
+
+        public HomeController()
+        {
+            _messageProvider = new MessageProvider();
+        }
         public ActionResult Index()
         {
-            return View();
+            return View(_messageProvider.GetMessage(MessageTyp.IndexPage));
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            return View(_messageProvider.GetMessage(MessageTyp.AboutPage));
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            //TODO Show IntelliSense
+            return View(_messageProvider.GetMessage(MessageTyp.IndexPage));
         }
     }
 }
