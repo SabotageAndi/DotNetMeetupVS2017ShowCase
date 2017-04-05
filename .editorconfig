@@ -1,0 +1,12 @@
+#Reference: https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference
+root = true
+
+[*]
+indent_style = space
+# (Please don't specify an indent_size here; that has too many unintended consequences.)
+
+# Code files
+[*.{cs,csx,vb,vbx}]
+indent_size = 4
+dotnet_style_object_initializer = true:suggestion
+dotnet_style_explicit_tuple_names = true:error

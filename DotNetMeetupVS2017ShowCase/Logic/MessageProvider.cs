@@ -15,6 +15,7 @@ namespace DotNetMeetupVS2017ShowCase.Logic
 
     public class MessageProvider
     {
+
         public MessageDto GetMessage(MessageTyp messageTyp)
         {
             switch (messageTyp)
@@ -36,6 +37,8 @@ namespace DotNetMeetupVS2017ShowCase.Logic
                         return messageDto;
                     }
             }
+
+            var x = GetMessage(messageTyp);
 
 
             return new MessageDto() { Message = "Lorem ipsum dolor sit amet." };
